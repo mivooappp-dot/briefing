@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefing — Novo Projeto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+  <div id="brand">Briefing</div>
+  <div id="counter"></div>
+  <div id="toast"></div>
+
+  <div id="stage">
+
+    <!-- WELCOME -->
+    <div class="slide active" data-index="0">
+      <div class="welcome-number">✦</div>
+      <div class="welcome-title">Vamos criar seu<br><em style="color:var(--accent)">site do zero.</em></div>
+      <p class="welcome-sub">Responda com calma — não tem resposta certa ou errada. Quanto mais você contar, melhor o resultado final.</p>
+      <button class="btn" onclick="next()">Começar <span>→</span></button>
+    </div>
+
+    <!-- 1 -->
+    <div class="slide" data-index="1">
+      <span class="section-tag">Pergunta 1 de 17</span>
+      <h2 class="question">Qual o nome da sua empresa?</h2>
+      <div class="input-group">
+        <input type="text" id="empresa" placeholder="Digite aqui..." autocomplete="off">
+      </div>
+      <p class="key-hint"><span class="key">Enter</span> para avançar</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="slide" data-index="2">
+      <span class="section-tag">Pergunta 2 de 17</span>
+      <h2 class="question">O que sua empresa faz?</h2>
+      <p class="hint">Explique de forma simples, como se estivesse falando com um cliente.</p>
+      <div class="input-group">
+        <textarea id="o_que_faz" placeholder="Ex: ajudo fotógrafos iniciantes a conquistar seus primeiros clientes pagos..."></textarea>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="slide" data-index="3">
+      <span class="section-tag">Pergunta 3 de 17</span>
+      <h2 class="question">Para que você quer esse site?</h2>
+      <p class="hint">Selecione tudo que se aplica.</p>
+      <div class="options">
+        <label class="option"><input type="checkbox" name="objetivo" value="Vender"><span>Vender</span></label>
+        <label class="option"><input type="checkbox" name="objetivo" value="Captar clientes"><span>Captar clientes</span></label>
+        <label class="option"><input type="checkbox" name="objetivo" value="Apresentar a empresa"><span>Apresentar a empresa</span></label>
+        <label class="option"><input type="checkbox" name="objetivo" value="Portfólio"><span>Portfólio</span></label>
+        <label class="option"><input type="checkbox" name="objetivo" value="Outro"><span>Outro</span></label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="objetivo_outro" placeholder="Se marcou Outro, explique...">
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="slide" data-index="4">
+      <span class="section-tag">Pergunta 4 de 17</span>
+      <h2 class="question">O que você quer que a pessoa faça quando entrar no site?</h2>
+      <p class="hint">Ex: clicar no WhatsApp, comprar, preencher formulário...</p>
+      <div class="input-group">
+        <textarea id="acao_usuario" placeholder="Descreva a ação principal que o visitante deve tomar..."></textarea>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="slide" data-index="5">
+      <span class="section-tag">Pergunta 5 de 17</span>
+      <h2 class="question">Quem é o seu cliente ideal?</h2>
+      <p class="hint">Quem você quer atrair com esse site?</p>
+      <div class="input-group">
+        <textarea id="cliente_ideal" placeholder="Ex: mulheres entre 30–45 anos, donas de negócio, que querem mais presença online..."></textarea>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="slide" data-index="6">
+      <span class="section-tag">Pergunta 6 de 17</span>
+      <h2 class="question">Qual problema você resolve para esse cliente?</h2>
+      <div class="input-group">
+        <textarea id="problema" placeholder="Ex: ele perde tempo tentando fazer sozinho e não sabe por onde começar..."></textarea>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="slide" data-index="7">
+      <span class="section-tag">Pergunta 7 de 17</span>
+      <h2 class="question">O que você vende?</h2>
+      <p class="hint">Liste seus produtos ou serviços principais.</p>
+      <div class="input-group">
+        <textarea id="produtos" placeholder="Ex: consultoria mensal, curso online, produto físico X..."></textarea>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="slide" data-index="8">
+      <span class="section-tag">Pergunta 8 de 17</span>
+      <h2 class="question">Qual é o seu principal produto ou serviço?</h2>
+      <p class="hint">Aquele que você mais quer destacar no site.</p>
+      <div class="input-group">
+        <input type="text" id="produto_principal" placeholder="Nome e uma frase descrevendo...">
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="slide" data-index="9">
+      <span class="section-tag">Pergunta 9 de 17</span>
+      <h2 class="question">Você prefere qual tipo de site?</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="tipo_site" value="Site com várias páginas"><span>🗂 Site com várias páginas</span></label>
+        <label class="option"><input type="radio" name="tipo_site" value="Página única (landing page)"><span>📄 Página única (landing page)</span></label>
+        <label class="option"><input type="radio" name="tipo_site" value="Ainda não sei"><span>🤔 Ainda não sei</span></label>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="slide" data-index="10">
+      <span class="section-tag">Pergunta 10 de 17</span>
+      <h2 class="question">Tem algum site que você gosta?</h2>
+      <p class="hint">Pode mandar link ou nome — qualquer referência ajuda.</p>
+      <div class="input-group">
+        <textarea id="referencias" placeholder="Ex: apple.com, notion.so, @fulano no Instagram..."></textarea>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="slide" data-index="11">
+      <span class="section-tag">Pergunta 11 de 17</span>
+      <h2 class="question">O que você gostou nesses sites?</h2>
+      <p class="hint">Design, cores, textos, navegação, sensação geral...</p>
+      <div class="input-group">
+        <textarea id="gosta_refs" placeholder="Ex: gosto do visual clean, da forma como apresenta os preços, das animações suaves..."></textarea>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="slide" data-index="12">
+      <span class="section-tag">Pergunta 12 de 17</span>
+      <h2 class="question">Você já tem logo?</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="tem_logo" value="Sim"><span>✅ Sim, tenho</span></label>
+        <label class="option"><input type="radio" name="tem_logo" value="Não"><span>❌ Não tenho ainda</span></label>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="slide" data-index="13">
+      <span class="section-tag">Pergunta 13 de 17</span>
+      <h2 class="question">Já tem cores ou estilo definidos?</h2>
+      <p class="hint">Se sim, quais? Se não, me conte a vibe que você quer passar.</p>
+      <div class="input-group">
+        <textarea id="cores_estilo" placeholder="Ex: quero algo escuro e sofisticado, com dourado. Ou: ainda não sei, mas quero transmitir confiança..."></textarea>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="slide" data-index="14">
+      <span class="section-tag">Pergunta 14 de 17</span>
+      <h2 class="question">Você já tem textos prontos?</h2>
+      <p class="hint">Textos sobre a empresa, serviços, sobre você...</p>
+      <div class="options">
+        <label class="option"><input type="radio" name="tem_textos" value="Sim"><span>✅ Sim, já tenho</span></label>
+        <label class="option"><input type="radio" name="tem_textos" value="Tenho alguns"><span>🟡 Tenho alguns</span></label>
+        <label class="option"><input type="radio" name="tem_textos" value="Não"><span>❌ Não, preciso criar</span></label>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="slide" data-index="15">
+      <span class="section-tag">Pergunta 15 de 17</span>
+      <h2 class="question">E imagens?</h2>
+      <p class="hint">Fotos suas, do produto, da equipe, do espaço...</p>
+      <div class="options">
+        <label class="option"><input type="radio" name="tem_imagens" value="Sim"><span>✅ Sim, já tenho</span></label>
+        <label class="option"><input type="radio" name="tem_imagens" value="Tenho algumas"><span>🟡 Tenho algumas</span></label>
+        <label class="option"><input type="radio" name="tem_imagens" value="Não"><span>❌ Não tenho</span></label>
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="slide" data-index="16">
+      <span class="section-tag">Pergunta 16 de 17</span>
+      <h2 class="question">O site precisa ter alguma dessas funções?</h2>
+      <p class="hint">Selecione tudo que precisar.</p>
+      <div class="options">
+        <label class="option"><input type="checkbox" name="funcionalidades" value="Botão de WhatsApp"><span>💬 Botão de WhatsApp</span></label>
+        <label class="option"><input type="checkbox" name="funcionalidades" value="Formulário"><span>📋 Formulário</span></label>
+        <label class="option"><input type="checkbox" name="funcionalidades" value="Blog"><span>📝 Blog</span></label>
+        <label class="option"><input type="checkbox" name="funcionalidades" value="Pagamento online"><span>💳 Pagamento online</span></label>
+        <label class="option"><input type="checkbox" name="funcionalidades" value="Agendamento"><span>📅 Agendamento</span></label>
+        <label class="option"><input type="checkbox" name="funcionalidades" value="Área de membros"><span>🔒 Área de membros</span></label>
+      </div>
+      <div class="input-group" style="margin-top:8px">
+        <input type="text" id="funcionalidade_outro" placeholder="Outro? Descreva aqui...">
+      </div>
+    </div>
+
+    <!-- 17 -->
+    <div class="slide" data-index="17">
+      <span class="section-tag">Pergunta 17 de 17</span>
+      <h2 class="question">Tem mais alguma coisa importante que eu deveria saber?</h2>
+      <p class="hint">Prazo, orçamento, contexto, algo que te preocupa... pode falar à vontade.</p>
+      <div class="input-group">
+        <textarea id="observacoes" placeholder="Fique à vontade..." style="min-height:140px"></textarea>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="slide" data-index="18">
+      <div class="success-icon">✓</div>
+      <span class="section-tag">Tudo certo!</span>
+      <h2 class="question">Briefing recebido com sucesso.</h2>
+      <p class="hint" style="max-width:460px">Obrigado por responder! Vou analisar tudo com cuidado e entro em contato em breve para dar início ao seu projeto.</p>
+    </div>
+
+  </div><!-- /stage -->
+
+  <div id="nav">
+    <button class="btn btn-ghost" id="btn-prev" onclick="prev()" style="display:none">← Anterior</button>
+    <button class="btn" id="btn-next" onclick="next()">Próximo →</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
